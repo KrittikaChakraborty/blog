@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ga Maamli', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .outc {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 100%; 
+            width: 100%; 
+            backdrop-filter: blur(10px); 
+            border: 2px solid rgba(255, 255, 255, 0.3); 
+            border-radius: 10px; 
+            overflow: hidden; 
+            animation: chb 10s infinite alternate, scb 10s infinite alternate, scc 10s infinite alternate;
+        }
+
+        .inc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.3); 
+            padding: 30px;
+            border-radius: 10px; 
+            max-width: 600px;
+            max-height: 500px;
+            width: 100%;
+            margin: 20px; /* Added missing semicolon */
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+        }
+
+        .content {
+            color: white; 
+            text-align: center;
+        }
+
+        /* Styling for labels */
+        #name, #age, #ppp, #pass {
+            font-weight: bold;
+            font-size: larger;
+            color: black;
+            font-style: italic;
+        }
+
+        #check {
+            font-size: medium;
+            color: black;
+            font-style: oblique;
+        }
+
+        /* Styling for link */
+        #link {
+            font-weight: bold;
+            font-size: larger;
+            color: blue;
+        }
+
+        #bt {
+            font-weight: bold;
+            font-size: medium;
+            font-style: normal;
+        }
+
+        #hde {
+            font-weight: bold;
+            font-size: xx-large;
+            color: black;
+            animation: fff 0.8s ease infinite;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Styling for password message */
+        b {
+            font-size: smaller;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px 15px; /* Add padding inside input boxes */
+            border: 1px solid #ddd; /* Subtle border color */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            color: #333; /* Text color */
+            background-color: #fff; /* Background color */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effect */
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #007bff; /* Border color on focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Box-shadow on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        @keyframes chb {
+            0% { background-image: url('https://thumbs.dreamstime.com/b/make-up-home-silhouettes-illustration-31473136.jpg');}
+            25% { background-image: url('https://i.pinimg.com/originals/33/da/9d/33da9db7fe6f6e19944959d48e0e3782.jpg'); }
+            50% { background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczEyOS1nbi0xMTkwLW1vY2t1cF8xLmpwZw.jpg?s=oVp1hz_884C0bRMndrW-OjUuFCvAfBk8fAsrGaIul0Y'); }
+            75% { background-image: url('https://www.mumsmakelists.com/wp-content/uploads/2024/01/classic-sugar-cookies-valentines-fb-ig-1-1200x1200.jpg'); }
+            100% { background-image: url('https://www.thelondonmother.net/wp-content/uploads/2020/03/organic_makeup.jpg'); }
+        }
+
+        @keyframes scb {
+            0% { background-size: 60% auto; }
+            25% { background-size: 30% auto; }
+            50% { background-size: 60% auto; }
+            75% { background-size: 90% auto; }
+            100% { background-size: 80% auto; }
+        }
+
+        @keyframes scc {
+            0% { background-size: cover; }
+            25% { background-size: cover; }
+            50% { background-size: cover; }
+            75% { background-size: cover; }
+            100% { background-size: cover; }
+        }
+
+        @keyframes fff {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outc">
+        <div class="inc">
+            <div class="content">
+                <div id="hde">New to website? Register here</div><br>
+                <form>
+                    <div class="row mb-3">
+                        <label for="examplename" class="form-label" id="name">UserName: </label>
+                        <input type="text" class="form-control" placeholder="Enter Your Username" minlength="5" maxlength="20" id="examplename">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label id="age">Select Age:</label>
+                        <input type="radio" value="Age (<18)" name="ageGroup">Age (&lt;18)
+                        <input type="radio" value="Age (18-60)" name="ageGroup">Age (18-60)
+                        <input type="radio" value="Age (>60)" name="ageGroup">Age (&gt;60)
+                    </div><br>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" id="ppp">Email: </label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Example@gmail.com" aria-describedby="emailHelp">
+                    </div><br>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label" id="pass">Password: </label>
+                        <input type="password" class="form-control" minlength="8" maxlength="20" id="exampleInputPassword1">
+                        <br>
+                        <b>Password should be of 8 to 20 characters</b>
+                    </div><br>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" id="check">Check me out</label>
+                    </div>
+                    <div class="buttoon" id="bt">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <br>
+                    <a href='http://127.0.0.1:5500/register.html' id="link">Click here if you already have an account</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
